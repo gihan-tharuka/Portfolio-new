@@ -171,9 +171,9 @@
         </div>
     </div>
 
-    <div class="flex mb-6 justify-center items-center">
-        <div class="relative w-9/10 h-screen  rounded-lg shadow-lg p-12">
-            <video autoplay loop muted class="w-full h-full object-cover rounded-lg ">
+    <div class="flex mb-6 justify-center items-center p-12 ">
+        <div class="relative w-9/10 h-screen rounded-lg shadow-lg p-1 bg-gray-900">
+            <video id="promoVideo" autoplay loop class="w-full h-full object-cover rounded-lg">
                 <source src="images/Promo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
@@ -182,14 +182,31 @@
                     <button class="bg-black text-white px-6 py-2 rounded-full text-sm md:text-base lg:text-lg">
                         Learn more
                     </button>
-                    <button
-                        class="border border-black text-black px-6 py-2 rounded-full text-sm md:text-base lg:text-lg">
+                    <button class="border border-black text-black px-6 py-2 rounded-full text-sm md:text-base lg:text-lg">
                         Buy
+                    </button>
+                    <button id="muteButton" class="bg-gray-700 text-white px-6 py-2 rounded-full text-sm md:text-base lg:text-lg">
+                        Mute
                     </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        const video = document.getElementById('promoVideo');
+        const muteButton = document.getElementById('muteButton');
+
+        muteButton.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteButton.innerText = 'Mute';
+            } else {
+                video.muted = true;
+                muteButton.innerText = 'Unmute';
+            }
+        });
+    </script>
 
     <!-- Product Features -->
     <div class="mb-6 mt-8">
@@ -386,17 +403,17 @@
     <div class="flex items-center justify-center min-h-screen">
         <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
             <!-- Free Plan -->
-            <div class="bg-gray-100 rounded-2xl shadow-lg p-6 w-full md:w-1/4">
+            <div class="bg-gray-100 rounded-2xl shadow-lg p-6 w-full md:w-1/4 mt-8">
                 <h2 class="text-xl font-semibold mb-4">Standard</h2>
-                <div class="text-3xl font-bold mb-6">Rs 12,000 <span class="text-lg font-normal text-gray-500"> month</span></div>
+                <div class="text-3xl font-bold mb-6">Rs 12,500 <span class="text-lg font-normal text-gray-500"> month</span></div>
                 <ul class="space-y-2 mb-6">
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Customized Design</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Responsive Design</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Smart Notification</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Hosting and Domain</li>
-                    <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Mobile Application</li>
-                    <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Content Management</li>
-                    <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>E Commerce</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-gray-400 mr-2"></i>Mobile Application</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-gray-400 mr-2"></i>Content Management</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-gray-400 mr-2"></i>E Commerce</li>
                 </ul>
                 <div class="flex justify-center">
                     <button class="bg-gray-800 text-white py-2 px-4 rounded-full">Purchase Plan</button>
@@ -407,7 +424,9 @@
             <div class="bg-gray-300 rounded-2xl shadow-lg p-6 w-full md:w-1/4 relative mb-4">
                 <div class="absolute top-0 left-0 right-0 bg-gray-800  text-white text-center py-2 rounded-t-2xl">MOST POPULAR</div>
                 <h2 class="text-xl font-semibold mb-4 mt-8">Premium</h2>
-                <div class="text-3xl font-bold mb-6">Rs 15,000<span class="text-lg font-normal text-gray-500">month</span></div>
+                <div class="text-3xl font-bold ">Rs 15,500<span class="text-sm font-normal text-gray-500 ml-2">month. </span></div>
+                <p class="text-sm mb-6 mt-2 text-gray-600"> You get free Rs.4800 implementation!</p>
+        
                 <ul class="space-y-2 mb-6">
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Customized Design</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Responsive Design</li>
@@ -423,9 +442,9 @@
             </div>
     
             <!-- Team Plan -->
-            <div class="bg-gray-100 rounded-2xl shadow-lg p-6 w-full md:w-1/4">
+            <div class="bg-gray-100 rounded-2xl shadow-lg p-6 w-full md:w-1/4 mt-8">
                 <h2 class="text-xl font-semibold mb-4">1 Year</h2>
-                <div class="text-3xl font-bold mb-6">Rs 150,000 <span class="text-lg font-normal text-gray-500"> year</span></div>
+                <div class="text-3xl font-bold mb-6">Rs 150,000 <span class="text-sm font-normal text-gray-500"> year. <br>You save Rs.36,000!</span></div>
                 <ul class="space-y-2 mb-6">
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Customized Design</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Responsive Design</li>
@@ -436,14 +455,15 @@
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>E Commerce</li>
                 </ul>
                 <div class="flex justify-center">
-                    <button class="bg-gray-800 text-white py-2 px-4 rounded-full">Purchase Plan</button>
+                    <button class="bg-gray-800 text-white py-2  px-4 rounded-full">Purchase Plan</button>
                 </div>
             </div>
     
             <!-- Enterprise Plan -->
-            <div class="bg-gray-100 rounded-2xl shadow-lg p-6 w-full md:w-1/4">
+            <div class="bg-gray-100 rounded-2xl shadow-lg p-6 w-full md:w-1/4 mt-8">
                 <h2 class="text-xl font-semibold mb-4">Lifetime</h2>
-                <div class="text-3xl font-bold mb-6">Rs 300,000 </div>
+                <div class="text-3xl font-bold ">Rs 350,000 <span class="text-sm  text-gray-500"></div>
+                <p class="text-sm mb-6 mt-2 text-gray-500"> You are only paying for 2.5 years!</p>
                 <ul class="space-y-2 mb-6">
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Customized Design</li>
                     <li class="flex items-center"><i class="fas fa-check-circle text-gray-800 mr-2"></i>Responsive Design</li>
@@ -459,7 +479,75 @@
             </div>
         </div>
     </div>
+
+    <!-- Why choose us -->
+    <div class="mx-20">
+        <div class="text-center py-12">
+            <h2 class="main-heading   text-center font-bold   leading-[3.25rem]">
+                Why choose us ? 
+            </h2>
+            <p class="sub-heading  mt-4 text-center">
+                We don't just provide a website, we provide a solution
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8 px-4">
+            <!-- Sales Card -->
+            <div class="bg-gray-100 rounded-3xl p-6 text-center w-full md:w-1/4">
+                <img alt="A person in a video call for sales" class="rounded-lg mb-4 mx-auto" src="images/cancell.webp"
+                    style="width: 225px; height: 150px;" />
+                <h2 class="text-xl font-semibold mb-2 text-gray-800">
+                    Freedom to Leave
+
+                </h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    No commitments, no pressure—cancel your services whenever you want, hassle-free.
+                </p>
+            </div>
+            <!-- Engineering Card -->
+            <div class="bg-gray-100 rounded-3xl p-6 text-center w-full md:w-1/4">
+                <img alt="A person in a video call for engineering" class="rounded-lg mb-4 mx-auto"
+                    src="images/wait.jpg" style="width: 225px; height: 150px;" />
+                <h2 class="text-xl font-semibold mb-2 text-gray-800">
+                    No Waiting Time
+
+                </h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Skip the long development process—get your website live and ready to use instantly.
+                </p>
+            </div>
+            <!-- Customer Support Card -->
+            <div class="bg-gray-100 rounded-3xl p-6 text-center w-full md:w-1/4">
+                <img alt="A person in a video call for customer support" class="rounded-lg mb-4 mx-auto"
+                    src="images/customize.jpg" style="width: 225px; height: 150px;" />
+                <h2 class="text-xl font-semibold mb-2 text-gray-800">
+                    Tailored for You
+                </h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+
+                    Every element is fully customizable to match your business.
+                </p>
+            </div>
+            <!-- Design Card -->
+            <div class="bg-gray-100 rounded-3xl p-6 text-center w-full md:w-1/4">
+                <img alt="A person in a video call for design" class="rounded-lg mb-4 mx-auto" src="images/support.jpg"
+                    style="width: 225px; height: 150px;" />
+                <h2 class="text-xl font-semibold mb-2 text-gray-800">
+                    Support That Delivers
+                </h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Enjoy continuous support—no payment required if we don’t meet your expectations.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
     <!-- Feature list -->
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
     <div class="mb-6 mt-16 mb-4">
         <h2 class="main-heading   text-center font-bold   leading-[3.25rem]">
             Want to dig deeper into the features?
@@ -473,125 +561,151 @@
         <table class="w-full">
             <tbody>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-700 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time1')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">User Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Manage user accounts, roles, and permissions efficiently.</p>
+                        <p class="sub-heading">Manage gym members, trainers, and staff with detailed user information, roles, and membership status.</p>
+                        <p id="time1" class="sub-heading hidden">Pain Point: Eliminates manual user tracking and reduces errors by streamlining member and staff management in one centralized system.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time2')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Membership Plan Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Create and manage various membership plans.</p>
+                        <p class="sub-heading">Create, customize, and manage different membership plans, including pricing and duration.</p>
+                        <p id="time2" class="sub-heading hidden">Pain Point: Prevents confusion over membership options and simplifies assigning plans, ensuring members understand their subscriptions.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time3')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Membership Payments Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Track and manage membership payments seamlessly.</p>
+                        <p class="sub-heading">Track membership payments, payment history, and multiple payment methods efficiently.</p>
+                        <p id="time3" class="sub-heading hidden">Pain Point: Reduces missed payments and manual tracking errors, ensuring timely renewals and financial accuracy.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time4')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">SMS Notifications</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Send automated SMS notifications to members.</p>
+                        <p class="sub-heading">Send automated notifications to members before their membership expires.</p>
+                        <p id="time4" class="sub-heading hidden">Reduces membership lapses and ensures consistent renewals, helping maintain gym revenue flow.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time5')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Schedule Assignment</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Assign and manage workout schedules for members.</p>
+                        <p class="sub-heading"> Assign users to specific schedules or workout programs with assignment history tracking.</p>
+                        <p id="time5" class="sub-heading hidden">Pain Point: Eliminates confusion over assigned plans, improving accountability and member program adherence.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
-                        <h2 class="card-heading">Workout Management</h2>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time6')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
+                        <h2 class="card-heading">Schedule Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Manage and track workout plans and progress.</p>
+                        <p class="sub-heading">Create and organize structured workout schedules for easy assignment to members.</p>
+                        <p id="time6" class="sub-heading hidden">Pain Point: Saves trainers’ time and ensures members have organized, goal-oriented workout plans.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time7')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Booking Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Handle class and session bookings efficiently.</p>
+                        <p class="sub-heading">Schedule and manage bookings for personal training sessions, including dates, times, and trainers.</p>
+                        <p id="time7" class="sub-heading hidden">Pain Point: Solves scheduling conflicts and miscommunication by providing a clear overview of session bookings.
+                        </p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time8')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Order Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Manage orders for gym products and services.</p>
+                        <p class="sub-heading">Track and process orders for gym supplements, merchandise, and other products with status updates.</p>
+                        <p id="time8" class="sub-heading hidden">Pain Point: Prevents order delays and mismanagement, ensuring smooth product delivery and member satisfaction.
+                        </p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time9')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Product Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Manage gym products and inventory effectively.</p>
+                        <p class="sub-heading">Maintain inventory for gym products, with price, stock, and availability tracking.</p>
+                        <p id="time9" class="sub-heading hidden">Pain Point: Avoids product shortages and overstocking, helping gyms manage inventory efficiently and increase sales.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time10')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Gallery Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Organize and manage photo and video galleries.</p>
+                        <p class="sub-heading">Upload and manage gym images to showcase events, milestones, and media highlights.</p>
+                        <p id="time10" class="sub-heading hidden">Enhances gym branding and engagement by visually sharing achievements and updates with members.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time11')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Transaction Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Track and manage financial transactions.</p>
+                        <p class="sub-heading">Record and track all financial transactions, including income, expenses, and financial reports.</p>
+                        <p id="time11" class="sub-heading hidden">Resolves financial disorganization and provides transparency for revenue and expense tracking.</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time12')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Schedule Request Management</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Handle schedule requests from members.</p>
+                        <p class="sub-heading">Handle schedule requests from members.</p>
+                        <p id="time12" class="sub-heading hidden">Hastle to request new schedules</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
-                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0">
-                        <i class="fas fa-check-circle  text-gray-900 mr-4"></i>
+                    <td class="flex items-center w-full md:w-2/5 mb-2 md:mb-0 cursor-pointer" onclick="toggleImplementationTime('time13')">
+                        <i class="fas fa-check-circle text-gray-900 mr-4"></i>
                         <h2 class="card-heading">Financial Analytics</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Analyze financial data and generate reports.</p>
+                        <p class="sub-heading">Analyze financial data and generate reports.</p>
+                        <p id="time13" class="sub-heading hidden">Lack of understanding about expenses and incomes</p>
                     </td>
                 </tr>
             </tbody>
         </table>
     </section>
+
+    <script>
+        function toggleImplementationTime(id) {
+            const element = document.getElementById(id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        }
+    </script>
     <section class="max-w-6xl mx-auto p-12 mt-6 bg-gray-100 rounded-2xl shadow-lg">
         <h1 class="text-2xl font-bold mb-6">Gym Member's Features</h1>
         <table class="w-full">
@@ -691,7 +805,7 @@
                         <h2 class="card-heading">Employee Dashboard</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Create and manage detailed fitness profiles for each member.</p>
+                        <p class="sub-heading ">Create and manage detailed fitness profiles for each member. (6 Hours)</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
@@ -700,7 +814,7 @@
                         <h2 class="card-heading">Fitness Profile System</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Create and manage detailed fitness profiles for each member.</p>
+                        <p class="sub-heading ">Create and manage detailed fitness profiles for each member. (4 Hours)</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
@@ -709,7 +823,7 @@
                         <h2 class="card-heading">Meal Plan Requesting</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Allow members to request personalized meal plans from nutritionists.</p>
+                        <p class="sub-heading ">Allow members to request personalized meal plans from nutritionists. (2 Hours)</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
@@ -718,7 +832,7 @@
                         <h2 class="card-heading">Nutrition Tracking</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Track daily nutrition intake and monitor dietary habits.</p>
+                        <p class="sub-heading ">Track daily nutrition intake and monitor dietary habits. (8 Hours)</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
@@ -727,7 +841,7 @@
                         <h2 class="card-heading">Maintenance and Feedback Reporting</h2>
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Report maintenance issues and provide feedback on gym facilities.</p>
+                        <p class="sub-heading ">Report maintenance issues and provide feedback on gym facilities. (2 Hours)</p>
                     </td>
                 </tr>
                 <tr class="flex flex-col md:flex-row items-center mb-4">
@@ -736,7 +850,7 @@
                         <h2 class="card-heading">In App Messaging</h2> 
                     </td>
                     <td class="w-full md:w-3/5">
-                        <p class="sub-heading ">Communicate with trainers and other members through the app.</p>
+                        <p class="sub-heading ">Communicate with trainers and other members through the app. (6 Hours)</p>
                     </td>
                 </tr>
             </tbody>
